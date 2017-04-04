@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Chat room</title>
+@extends('layouts.app')
+
+@section('content')
+
+	{{-- <title>Chat room</title>
 	 <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-    
-   {{-- the css folder in the assets  --}}
-  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+     --}}
+    <div class="container">
+    	<div class="row">
+	    	<div class="col col-md-6 col-offset-3">
+				<div id="app">
 
-</head>
-<body>
-	<div id="app">
-		<h1>Chatroom</h1>
-		
 
-		{{-- <chat-message></chat-message> --}}
-		<chat-log :messages="messages"></chat-log> {{-- bind messages array --}}
-		<chat-composer v-on:messagesent="addMessage"></chat-composer>
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Chatroom</h3>
+					  </div>
+					  <div class="panel-body">
 
+					   {{-- <chat-message></chat-message> --}}
+						<chat-log :messages="messages"></chat-log> {{-- bind messages array --}}
+						<chat-composer v-on:messagesent="addMessage"></chat-composer>
+
+					  </div>
+					</div>
+
+				</div>
+			</div>
+		</div>
 	</div>
 	
-	<script src="{{asset('js/app.js')}}" type="text/javascript"></script>
-</body>
-</html>
+@endsection
+
