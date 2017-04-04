@@ -2,16 +2,9 @@
 
 @section('content')
 
-	{{-- <title>Chat room</title>
-	 <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-     --}}
     <div class="container">
     	<div class="row">
-	    	<div class="col col-md-6 col-offset-3">
+	    	<div class="col col-md-8 col-offset-2">
 				<div id="app">
 
 

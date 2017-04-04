@@ -21,21 +21,23 @@ Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 const app = new Vue({
     el: '#app',
     data: {
-    	messages: [
-                    {
-                        message: 'Hey!',
-                        user: "john Doe"
-                    },
-                    {
-                    message: 'Hey!',
-                    user: "john Doe"
-                    }
-                ]   
+    	messages: []   
             },
     methods: {
     	addMessage(message){
     		// add to existing messages
     		this.messages.push(message);
+
+            // persist to the database
+            axios.post('/messages', message).then(response=>{
+                // do whatever
+            });
     	}
+    },
+    created(){
+        // axios uses promises so we could do .then
+        axios.get('/messages').then(response=>{
+            this.messages = response.data;
+        });
     }
 });
