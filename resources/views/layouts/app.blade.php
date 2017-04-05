@@ -19,6 +19,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
 </head>
 <body>
     <div id="app">
