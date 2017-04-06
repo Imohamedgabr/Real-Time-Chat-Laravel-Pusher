@@ -12460,8 +12460,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
+/* WEBPACK VAR INJECTION */(function($) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -12472,7 +12471,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        // data need to be a function not normal JS
         return {
             messageText: ''
         };
@@ -12483,14 +12481,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$emit('messagesent', {
                 message: this.messageText,
                 user: {
-                    name: "John Doe"
+                    name: $('.navbar-right .dropdown-toggle').text()
                 }
             });
-            // console.log(this.messageText);
             this.messageText = '';
         }
     }
 });
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 /* 34 */
@@ -15009,7 +15007,7 @@ exports.push([module.i, "\n.chat-log .chat-message:nth-child(even)    {\n    bac
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.chat-composer{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.chat-composer input{\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n}\n.chat-composer button{\n    border-radius: 0;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.chat-composer {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\n}\n.chat-composer input {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 auto;\r\n            flex: 1 auto;\r\n    padding: .5rem 1rem;\n}\n.chat-composer button {\r\n    border-radius: 0;\n}\r\n", ""]);
 
 /***/ }),
 /* 42 */
@@ -37238,8 +37236,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "messageText"
     }],
     attrs: {
+      "id": "message",
       "type": "text",
-      "placeholder": "Start typing your message"
+      "placeholder": "Start typing your message..."
     },
     domProps: {
       "value": (_vm.messageText)
